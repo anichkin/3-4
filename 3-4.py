@@ -17,7 +17,7 @@ print('?'.join(
     (AUTORISER_URL, urlencode(auth_data))
 ))
 
-TOKEN = 'ba35208d3f142a8198920a269e9d9c79d34b070a07d29de033f37d12437b3bc6743935a76b12234c6d57a'
+TOKEN = '5372e7d19e098cbd96c42cffa2e61a3450535c14ea8daaa6139f3f8c1fd52ed6a4cfd9869e13038715a52'
 
 params = {
     'access_token': TOKEN,
@@ -41,8 +41,6 @@ def get_friends_list(friend_id, VERSION):
     if 'response' in response_friend_json.keys():
         friend_list = response_friend_json['response']['items']
         return friend_list
-    else:
-        return False
 
 
 def friends_friends_list(my_friend_list):
@@ -60,5 +58,5 @@ def cross_friends(my_friend_list):
             crossing_friends = list(set(crossing_friends) & set(get_friends_list(friend_id, VERSION)))
             print(crossing_friends)
 
-
+friends_friends_list(my_friend_list)
 cross_friends(my_friend_list)
